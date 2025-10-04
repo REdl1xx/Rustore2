@@ -30,12 +30,11 @@ fun SearchBar(onClick: @Composable () -> Unit){
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(25.dp))
-            .clickable {}
+            .clickable { onClick() }
             .background(
                 color = Color.LightGray,
                 shape = RoundedCornerShape(25.dp)
-            ),
-        verticalAlignment = Alignment.CenterVertically
+            ), verticalAlignment = Alignment.CenterVertically
     ) {
         Spacer(modifier = Modifier.width(16.dp))
 
