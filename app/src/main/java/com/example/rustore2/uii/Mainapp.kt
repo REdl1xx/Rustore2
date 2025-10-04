@@ -1,5 +1,6 @@
 package com.example.rustore2.uii
 
+import android.R.style.Theme
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,7 +22,9 @@ import com.example.rustore2.uii.elementsmainapp.SearchBar
 
 @Composable
 fun Mainapp(name: String) {
-    Column() {
+    Column(modifier = Modifier
+        .background(color = Color.White)
+    ) {
         Row(modifier = Modifier.fillMaxSize()) {
         SearchBar(onClick = {})
     }
