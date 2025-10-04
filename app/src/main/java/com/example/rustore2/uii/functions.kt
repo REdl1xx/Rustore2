@@ -12,14 +12,15 @@ import com.example.rustore2.uii.AppCard
 
 @Serializable
 object SearchBar
+@Serializable
+object StartPage
 
 
 
 @Composable
 fun Rootscreen() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = SearchBar){
+    NavHost(navController = navController, startDestination = StartPage){
         composable<SearchBar>{AppCard("hhhhj")}
     }
 }
-//88
