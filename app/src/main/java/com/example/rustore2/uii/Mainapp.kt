@@ -12,5 +12,5 @@ fun Mainapp(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun vizov(){
-    Mainapp()
+    Mainapp("zzz")
 }
