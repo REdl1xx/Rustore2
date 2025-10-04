@@ -8,18 +8,18 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.serialization.Serializable
+import com.example.rustore2.uii.AppCard
 
 @Serializable
 object SearchBar
-@Serializable
-object AppCard
+
 
 
 @Composable
 fun Rootscreen() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = SearchBar){
-        composable<SearchBar>{}
+        composable<SearchBar>{AppCard("hhhhj")}
     }
 }
 //88
