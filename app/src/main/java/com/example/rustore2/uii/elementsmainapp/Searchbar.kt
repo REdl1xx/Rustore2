@@ -30,7 +30,7 @@ fun SearchBar(onClick: @Composable () -> Unit){
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(25.dp))
-            .clickable { onClick() }
+            .clickable {}
             .background(
                 color = Color.LightGray,
                 shape = RoundedCornerShape(25.dp)
