@@ -21,7 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Rustore2Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
+                    Box(modifier = Modifier.padding(innerPadding),
+                        ) {
                         Mainapp("Android")
                     }
                 }
