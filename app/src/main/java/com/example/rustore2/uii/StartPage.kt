@@ -20,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.rustore2.R
 import kotlinx.serialization.Serializable
 
 
@@ -36,7 +37,7 @@ object Category
 fun Starter(onNavigateToMain: () -> Unit) {
     Column (modifier = Modifier
         .background(color = Color.White)) {
-        //Image(ImageBitmap.imageResource(res.drawable.rustore_icon))
+        Image(ImageBitmap.imageResource(R.drawable.rustore_icon), contentDescription = "rustore")
         Text("Добро пожаловать в RuStore!")
         Text("Welcome text example")
         Button(onClick = {onNavigateToMain()}) {
