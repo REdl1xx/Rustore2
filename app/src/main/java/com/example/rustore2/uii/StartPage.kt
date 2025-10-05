@@ -32,6 +32,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.rustore2.R
+import com.example.rustore2.uii.elementsmainapp.AppInfo
+import com.example.rustore2.uii.elementsmainapp.GosuslugiAppPage
 import kotlinx.serialization.Serializable
 
 
@@ -43,6 +45,8 @@ object Card
 object Start
 @Serializable
 object Category
+@Serializable
+object BigBrother
 
 @Composable
 fun Starter(onNavigateToMain: () -> Unit) {
@@ -90,25 +94,14 @@ fun Main(check: Boolean) {
                         route = Card
                     )
                 },
-                        onNavigateToCat = {
+                        onNavigateToGos = {
                     navController.navigate(
-                        route = Category
+                        route = BigBrother
                     )
-                },
-                onNavigateToStart = {
-                    navController.navigate(
-                        route = Start
-                    )
-                }
-            )
+                })
         }
-        composable<Card> {
-            AppCard(
-                onNavigateToMain = {
-                    navController.navigate(
-                        route = Main
-                    )
-                }
+        composable<BigBrother> {
+            GosuslugiAppPage(
             )
         }
     }

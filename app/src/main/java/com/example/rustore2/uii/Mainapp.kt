@@ -3,6 +3,7 @@ package com.example.rustore2.uii
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,7 +18,7 @@ import com.example.rustore2.uii.elementsmainapp.AppInfo
 
 
 @Composable
-fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigateToStart: () -> Unit) {
+fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToGos: () -> Unit) {
     Column(modifier = Modifier
         .background(color = Color.White)
         .fillMaxSize()
@@ -28,27 +29,18 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
             ) {
                 SearchBar(onClick = { onNavigateToCard() })
             }
-            Row (modifier = Modifier
-                .padding(16.dp)
-            ){
+            Row(
+                modifier = Modifier
+                    .padding(16.dp)
+            ) {
                 val sampleAppInfo = AppInfo(
                     name = "Госуслуги",
                     developer = "Минцифры России",
                     downloads = "100+ млн скачиваний",
                     iconRes = R.drawable.gosuslugi_icon
                 )
-                AppHeader(appInfo = sampleAppInfo)
-            }
-        Row (modifier = Modifier
-            .padding(16.dp)
-        ){
-            val sampleAppInfo = AppInfo(
-                name = "Госуслуги",
-                developer = "Минцифры России",
-                downloads = "100+ млн скачиваний",
-                iconRes = R.drawable.gosuslugi_icon
-            )
-            AppHeader(appInfo = sampleAppInfo)
+                AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
+
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -59,7 +51,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -70,7 +62,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -81,7 +73,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -92,7 +84,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -103,7 +95,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo,  onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -114,7 +106,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -125,7 +117,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -136,7 +128,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         Row (modifier = Modifier
             .padding(16.dp)
@@ -147,15 +139,18 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigat
                 downloads = "100+ млн скачиваний",
                 iconRes = R.drawable.gosuslugi_icon
             )
-            AppHeader(appInfo = sampleAppInfo)
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
+        }
+        Row (modifier = Modifier
+            .padding(16.dp)
+        ){
+            val sampleAppInfo = AppInfo(
+                name = "Госуслуги",
+                developer = "Минцифры России",
+                downloads = "100+ млн скачиваний",
+                iconRes = R.drawable.gosuslugi_icon
+            )
+            AppHeader(appInfo = sampleAppInfo, onClick = {onNavigateToGos()})
         }
         }
     }
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun MainappPreview(){
-    Mainapp(onNavigateToCard = {}, onNavigateToCat = {}, onNavigateToStart = {})
-
-}
-//
