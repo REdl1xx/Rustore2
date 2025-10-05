@@ -21,7 +21,7 @@ import com.example.rustore2.uii.elementsmainapp.SearchBar
 
 
 @Composable
-fun AppCard(name: String) {
+fun AppCard(onNavigateToMain: () -> Unit) {
     Column(modifier = Modifier
         .background(color = Color.White)
     ) {
@@ -30,11 +30,4 @@ fun AppCard(name: String) {
             Text("penis")
         }
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun Vizovv() {
-    AppCard("zzz")
 }

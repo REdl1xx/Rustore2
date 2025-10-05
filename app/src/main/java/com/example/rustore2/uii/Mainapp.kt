@@ -10,21 +10,14 @@ import com.example.rustore2.uii.elementsmainapp.SearchBar
 
 
 @Composable
-fun Mainapp(name: String) {
+fun Mainapp(onNavigateToCard: () -> Unit) {
     Column(modifier = Modifier
         .background(color = Color.White)
     ) {
         Row(modifier = Modifier.fillMaxSize()) {
         SearchBar(onClick = {
-            Rootscreen()
+            onNavigateToCard()
         })
     }
     }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun Vizov() {
-    Mainapp("zzz")
 }

@@ -1,7 +1,82 @@
 package com.example.rustore2.uii
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.Text
 import java.io.File
 import com.example.rustore2.MainActivity
+import com.example.rustore2.uii.Mainapp
+import com.example.rustore2.uii.AppCard
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import kotlinx.serialization.Serializable
 
-val Check = File("C:\\Users\\User\\StudioProjects\\Rustore2\\app\\src\\main\\java\\com\\example\\rustore2\\uii\\Flag")
+//val Check = File("C:\\Users\\User\\StudioProjects\\Rustore2\\app\\src\\main\\java\\com\\example\\rustore2\\uii\\Flag")
 
+@Serializable
+object Main
+@Serializable
+object Card
+@Serializable
+object Start
+@Serializable
+object StartPage
+
+@Composable
+fun Starter(onNavigateToMain: () -> Unit) {
+    Column (modifier = Modifier
+        .background(color = Color.White)) {
+        //Image(ImageBitmap.imageResource(res.drawable.rustore_icon))
+        Text("Добро пожаловать в RuStore!")
+        Text("Welcome text example")
+        Button(onClick = {onNavigateToMain()}) {
+            Text("Продолжить")
+        }
+    }
+}
+
+@Composable
+fun Main() {
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = Start) {
+        composable<Start> {
+            Starter(
+                onNavigateToMain = {
+                    navController.navigate(
+                        route = Main
+                    )
+                }
+            )
+        }
+        composable<Main> { backStackEntry ->
+            val main: Main = backStackEntry.toRoute()
+            Mainapp(
+                onNavigateToCard = {
+                    navController.navigate(
+                        route = Card
+                    )
+                }
+            )
+        }
+        composable<Card> {
+            AppCard(
+                onNavigateToMain = {
+                    navController.navigate(
+                        route = Main
+                    )
+                }
+            )
+        }
+    }
+}
