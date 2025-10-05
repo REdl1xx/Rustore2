@@ -22,7 +22,6 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
 
-//val Check = File("C:\\Users\\User\\StudioProjects\\Rustore2\\app\\src\\main\\java\\com\\example\\rustore2\\uii\\Flag")
 
 @Serializable
 object Main
