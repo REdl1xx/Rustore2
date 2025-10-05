@@ -1,23 +1,38 @@
 package com.example.rustore2
 
 import android.os.Bundle
+import android.content.SharedPreferences
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.rustore2.ui.theme.Rustore2Theme
+import com.example.rustore2.uii.Mainapp
 import com.example.rustore2.uii.Main
 
-val check: Boolean = false
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val mSharedPref = getPreferences(MODE_PRIVATE)
+        val isStart: Boolean = mSharedPref.getBoolean("is_start", false)
         enableEdgeToEdge()
         setContent {
             Rustore2Theme {
-                // Это единственная строка, которая должна быть здесь.
-                // Она запускает всю вашу навигацию и экраны.
-                Main()
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Box(modifier = Modifier.padding(innerPadding),
+                        )
+                        Main(isStart)
+                        val e: SharedPreferences.Editor = mSharedPref.edit()
+                        e.putBoolean("is_start", true)
+                        e.commit()
+                    }
+                }
             }
         }
     }
-}
