@@ -15,6 +15,7 @@ import com.example.rustore2.ui.theme.Rustore2Theme
 import com.example.rustore2.uii.Mainapp
 import com.example.rustore2.uii.Main
 
+val check: Boolean = false
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
