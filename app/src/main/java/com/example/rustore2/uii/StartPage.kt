@@ -8,7 +8,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import java.io.File
 import com.example.rustore2.MainActivity
-import com.example.rustore2.uii.Mainapp
 import com.example.rustore2.uii.AppCard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

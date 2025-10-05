@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.rustore2"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.material)
     val nav_version = "2.9.5"
 
     // Jetpack Compose integration
