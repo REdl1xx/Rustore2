@@ -100,7 +100,8 @@ fun Main(check: Boolean) {
                     )
                 })
         }
-        composable<BigBrother> {
+        composable<BigBrother> {backStackEntry ->
+            val bigbro: BigBrother = backStackEntry.toRoute()
             GosuslugiAppPage(
             )
         }

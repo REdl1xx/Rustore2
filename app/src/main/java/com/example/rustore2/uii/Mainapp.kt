@@ -27,7 +27,7 @@ fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToGos: () -> Unit) {
                 modifier = Modifier
                     .padding(16.dp)
             ) {
-                SearchBar(onClick = { onNavigateToCard() })
+                SearchBar(onClick = { onNavigateToGos() })
             }
             Row(
                 modifier = Modifier

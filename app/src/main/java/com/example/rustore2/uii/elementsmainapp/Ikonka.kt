@@ -1,6 +1,7 @@
 package com.example.rustore2.uii.elementsmainapp
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -50,6 +51,7 @@ fun AppHeader(appInfo: AppInfo, modifier: Modifier = Modifier, onClick: @Composa
         Row(
             modifier = modifier
                 .fillMaxWidth()
+                .clickable{}
                 .padding(horizontal = 16.dp, vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
