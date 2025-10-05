@@ -46,9 +46,9 @@ fun Starter(onNavigateToMain: () -> Unit) {
 }
 
 @Composable
-fun Main() {
+fun Main(check: Boolean) {
     val navController = rememberNavController()
-    NavHost(navController, startDestination = Main) {
+    NavHost(navController, startDestination = if (check) {Main} else {Start}) {
         composable<Start> {
             Starter(
                 onNavigateToMain = {
