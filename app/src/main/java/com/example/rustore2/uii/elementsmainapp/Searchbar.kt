@@ -23,19 +23,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun SearchBar(onClick: () -> Unit){
+fun SearchBar(onClick: @Composable () -> Unit){
     Row(
         modifier = Modifier
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .fillMaxWidth()
             .height(50.dp)
             .clip(RoundedCornerShape(25.dp))
-            .clickable { onClick() }
+            .clickable {}
             .background(
                 color = Color.LightGray,
                 shape = RoundedCornerShape(25.dp)
-            ),
-        verticalAlignment = Alignment.CenterVertically
+            ), verticalAlignment = Alignment.CenterVertically
     ) {
         Spacer(modifier = Modifier.width(16.dp))
 
@@ -56,4 +55,3 @@ fun SearchBar(onClick: () -> Unit){
         )
     }
 }
-//z

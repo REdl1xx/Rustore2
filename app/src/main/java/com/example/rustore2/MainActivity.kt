@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.rustore2.ui.theme.Rustore2Theme
 import com.example.rustore2.uii.Mainapp
+import com.example.rustore2.uii.Rootscreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Box(modifier = Modifier.padding(innerPadding),
                         ) {
-                        Mainapp("Android")
+                        Rootscreen()
                     }
                 }
             }
