@@ -158,3 +158,4 @@ fun MainappPreview(){
     Mainapp(onNavigateToCard = {}, onNavigateToCat = {}, onNavigateToStart = {})
 
 }
+//
