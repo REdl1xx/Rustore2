@@ -31,7 +31,7 @@ object Card
 @Serializable
 object Start
 @Serializable
-object StartPage
+object Category
 
 @Composable
 fun Starter(onNavigateToMain: () -> Unit) {
@@ -49,7 +49,7 @@ fun Starter(onNavigateToMain: () -> Unit) {
 @Composable
 fun Main() {
     val navController = rememberNavController()
-    NavHost(navController, startDestination = Start) {
+    NavHost(navController, startDestination = Main) {
         composable<Start> {
             Starter(
                 onNavigateToMain = {
@@ -65,6 +65,16 @@ fun Main() {
                 onNavigateToCard = {
                     navController.navigate(
                         route = Card
+                    )
+                },
+                        onNavigateToCat = {
+                    navController.navigate(
+                        route = Category
+                    )
+                },
+                onNavigateToStart = {
+                    navController.navigate(
+                        route = Start
                     )
                 }
             )

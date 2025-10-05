@@ -8,9 +8,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.rustore2.uii.elementsmainapp.SearchBar
 
-
 @Composable
-fun Mainapp(onNavigateToCard: () -> Unit) {
+fun Mainapp(onNavigateToCard: () -> Unit, onNavigateToCat: () -> Unit, onNavigateToStart: () -> Unit) {
     Column(modifier = Modifier
         .background(color = Color.White)
     ) {
